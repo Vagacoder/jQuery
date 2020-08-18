@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Simple example of jQuery</title>
+    <script src='lib/jquery-3.5.1.dev.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('#hideAllP').click(function(){
+                $('p').hide();
+            });
+
+            $('#showAllP').click(()=>{
+                $('p').show();
+            });
+
+            $('#hideFirst').click(()=>{
+                $('.first').hide();
+            })
+
+            $('#showFirst').click(()=>{
+                $('.first').show();
+            })
+
+        });
+    </script>
+</head>
+<body>
+<h1>01 Simple example of jQuery</h1>    
+<h2>this is a heading</h2>
+<p class='first'>This is a paragraph</p>
+<p class='second'>This is another paragraph</p>
+
+
+<button id='hideAllP'>Click to hide paragraphs</button>
+<button id='showAllP'>Click to show paragraphs</button>
+
+<button id='hideFirst'>Click to hide first paragraph</button>
+<button id='showFirst'>Click to show first paragraph</button>
+
+</body>
+</html>

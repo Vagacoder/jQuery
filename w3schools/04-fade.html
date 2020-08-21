@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 jQeury fade examples</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        #box1, #box2, #box3{
+            width: 80px;
+            height: 80px;
+        }
+        #box1{
+            background: red;
+        }
+        #box2{
+            background: lightgreen;
+        }
+        #box3{
+            background: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+<h1>04 jQuery Fade example</h1>
+<button id='btn1'>click to fade OUT boxes</button>
+<button id='btn2'>click to fade IN boxes</button>
+<button id='btn3'>click to Toggle boxes</button>
+<button id='btn4'>click to FADE toggle boxes</button>
+<button id='btn5'>click to fade TO boxes</button>
+
+<div>
+    <div id='box1'></div>
+    <div id='box2'></div>
+    <div id='box3'></div>
+</div>
+
+
+
+</body>
+<script>
+    $(document).ready(()=> {
+        $('#btn1').click(()=> {
+            $('#box1').fadeOut();
+            $('#box2').fadeOut('slow');
+            $('#box3').fadeOut(3000);
+        });
+        $('#btn2').click(()=> {
+            $('#box1').fadeIn();
+            $('#box2').fadeIn('slow');
+            $('#box3').fadeIn(3000);
+        });
+        $('#btn3').click(()=> {
+            $('#box1').toggle();
+            $('#box2').toggle('slow');
+            $('#box3').toggle(3000);
+        });
+        $('#btn4').click(()=> {
+            $('#box1').fadeToggle();
+            $('#box2').fadeToggle('slow');
+            $('#box3').fadeToggle(3000);
+        });
+        $('#btn5').click(()=> {
+            $('#box1').fadeTo('slow', 0.05);
+            $('#box2').fadeTo('slow', 0.3);
+            $('#box3').fadeTo('slow', 0.6);
+        });
+    });
+</script>
+</html>

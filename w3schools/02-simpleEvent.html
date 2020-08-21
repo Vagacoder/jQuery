@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 jQuery Simple example of events</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <script>
+        $(document).ready(function(){
+
+            $('p').dblclick(function(){
+                $(this).hide();
+            });
+
+            $('#p1').mouseenter(function(){
+                alert("Mouse enter #p1");
+                
+            });
+
+            $('#p2').mouseleave(() => {
+                alert("Mouse leave p2");
+            });
+
+            $('#p3').mousedown(() => {
+                alert('Mouse down p3');
+            });
+
+            $('#p4').hover(function() {
+                $(this).css('background-color', 'yellow');
+            });
+
+            $('input').focus(function(){
+                $(this).css('background-color', '#ccc');
+            });
+
+            $('input').blur(function(){
+                $(this).css('background-color', '#fff');
+            })
+
+            $('#p5').on({
+                mouseenter: function(){
+                    $(this).css('color', 'red');
+                },
+                mouseleave: function(){
+                    $(this).css('color', 'mediumseagreen');
+                },
+                click: function(){
+                    $(this).css('color', 'lightblue');
+                }
+            });
+        });
+    </script>
+    <style>
+        div {
+            margin: 16px;
+        }
+        p{
+            display:inline;
+            padding: 8px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>02 jQuery simple example of events</h1>
+<div><p>Click on p tage to hide it</p></div>
+<div><p id='p1'>Mouse enter to see alert</p></div>
+<div><p id='p2'>Mouse leave to see alert</p></div>
+<div><p id='p3'>Mouse down to see alert</p></div>
+<div><p id='p4'>Mouse hover to change bg</p></div>
+<span>Enter number</span><input type="text" />
+<div><p id='p5'>try different mouse actions</p></div>
+
+</body>
+</html>

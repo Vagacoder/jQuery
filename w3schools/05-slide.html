@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 jQuery example Slide</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        .menu {
+            border: 1px solid crimson;
+            margin: 4px;
+        }
+
+        .panel {
+            border: 1px solid dodgerblue;
+            margin: 4px;
+        }
+
+        #panel1 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>05 jQuery examples Slide</h1>
+
+<div class='menu' id='menu1'>Click menu1 to see panel1</div>
+<div class='panel' id='panel1'>This is panel 1</div>
+
+<hr/>
+
+<div class='menu' id='menu2'>Click menu2 to hide panel2</div>
+<div class='panel' id='panel2'>This is panel 2</div>
+
+
+<hr/>
+
+<div class='menu' id='menu3'>Click menu3 to toggle panel3</div>
+<div class='panel' id='panel3'>This is panel 32</div>
+
+</body>
+<script>
+$(document).ready(()=>{
+    $('#menu1').click(()=>{
+        $('#panel1').slideDown('slow');
+    })
+
+    $('#menu2').click(()=>{
+        $('#panel2').slideUp('slow');
+    })
+
+    $('#menu3').click(()=>{
+        $('#panel3').slideToggle('slow');
+    })
+});
+
+</script>
+</html>

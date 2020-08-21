@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 Hide and show an element</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+</head>
+<body>
+<button id='btn1'>Click to Hide</button>
+<button id='btn2'>Click to Show</button>
+<div id='text1'>Text 1</div>
+
+<br/> 
+<button id='btn3'>Click to toggle</button>
+<div id='text2'>Text 2</div>
+</body>
+<script>
+$(document).ready(()=> {
+    $('#btn1').click(()=>{
+        $('#text1').hide(500, ()=> {
+            alert('text 1 is hidden now.');
+        });
+    });
+
+    $('#btn2').click(()=>{
+        $('#text1').show(1000);
+    });
+
+    $('#btn3').click(()=>{
+        $('#text2').toggle('slow');
+    })
+});
+
+</script>
+</html>

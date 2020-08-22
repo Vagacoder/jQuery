@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 jQuery Example of Animations</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        .container{
+            position: relative;
+            padding: 50px;
+        }
+
+        .box{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: hotpink;
+        }
+    </style>
+</head>
+<body>
+<h1>06 jQuery examples of animations</h1>
+<div class="container">
+    <button id="btn1">Move box1 left</button>
+    <div id="box1" class="box">Box 1</div>
+</div>
+
+<div class="container">
+    <button id="btn2">Toggle box2</button>
+    <div id="box2" class="box">Box 2</div>
+</div>
+
+<div class="container">
+    <button id="btn3">Hide box3</button>
+    <div id="box3" class="box">Box 3</div>
+</div>
+
+<div class="container">
+    <button id="btn4">Queued animation box4</button>
+    <div id="box4" class="box">Box 4</div>
+</div>
+
+</body>
+<script>
+$(document).ready(()=> {
+    $('#btn1').click(()=>{
+        $('#box1').animate({
+            left: '250px',
+            opacity: '0.4',
+            height: '20px',
+            width: '+=50px',
+            },
+            'slow');
+    });
+
+    $('#btn2').click(()=>{
+        $('#box2').animate({
+            width: 'toggle'
+        });
+    });
+
+    $('#btn3').click(()=>{
+        $('#box3').animate({
+            height: 'hide'
+        });
+    });
+
+    $('#btn4').click(()=>{
+        $('#box4').animate({
+            height: '100px',
+            opacity: '0.1',
+        });
+        $('#box4').animate({
+            width: '100px',
+            opacity: '0.8',
+            fontSize: '1.25em',
+        });
+        $('#box4').animate({
+            height: '50px',
+            opacity: '0.2',
+            fontSize: '1.5em',
+        });
+        $('#box4').animate({
+            width: '50px',
+            opacity: '1',
+            fontSize: '1em',
+        });
+    });
+});
+
+
+</script>
+</html>

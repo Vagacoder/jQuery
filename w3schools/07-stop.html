@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 jQeury stop animation</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        .container{
+            position: relative;
+        }
+        .box{
+            position:absolute;
+            width: 50px;
+            height: 50px;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+<h1>07 jQuery Stop Animation</h1>    
+<button id="btn1">Start</button>
+<button id="btn2">Stop</button>
+<button id="btn3">Stop all</button>
+<button id="btn4">Stop and end first</button>
+<button id="btn5">Stop all and end first</button>
+
+<div class="container">
+    <div class="box">Hi</div>
+
+</div>
+</body>
+<script>
+$('document').ready(()=>{
+    $('#btn1').click(()=>{
+        $('.box').animate({
+            left: '100px'
+        }, 3000);
+        $('.box').animate({
+            fontSize: '200%',
+        }, 3000);
+    });
+
+    $('#btn2').click(()=>{
+        $('.box').stop();
+    })
+
+    $('#btn3').click(()=>{
+        $('.box').stop(true);
+    })
+
+    $('#btn4').click(()=>{
+        $('.box').stop(false, true);
+    })
+
+    $('#btn5').click(()=>{
+        $('.box').stop(true, true);
+    })
+
+});
+</script>
+
+</html>

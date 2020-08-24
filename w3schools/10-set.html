@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 jQuery set content</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+
+
+    </style>
+</head>
+<body>
+<h1>10 jQuery Set Content</h1>
+<button id="btn1">set text</button>
+<p id="text1">text1</p>
+
+<br/>
+<button id="btn2">set html</button>
+<p id="text2">text2</p>
+
+<br/>
+<button id="btn3">set value</button>
+<input type="text" id="text3" value="text3"></input>
+
+
+</body>
+
+<script>
+$(document).ready(()=>{
+    $('#btn1').click(()=>{
+        $('#text1').text('Hello world!');
+    });
+
+    $('#btn2').click(() =>{
+        $('#text2').html('<b>Hello</b> world');
+    });
+
+    $('#btn3').click(()=>{
+        $('#text3').val('Dolly duck');
+    });
+});
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09 jQuery get content and attributes</title>
+    <script src="./lib/jquery-3.5.1.dev.js"></script>
+    <style>
+
+
+    </style>
+</head>
+<body>
+<h1>09 jQuery get content and attributes</h1>    
+<button id="btn1">Show Text</button>
+<button id="btn2">Show HTML</button>
+<p id="text1">This is some <b>bold</b> text</p>
+
+<br/>
+<button id="btn3">get input name</button>
+<p>Name:</p>
+<input type="text" id="input1" value="" />
+
+<br />
+<br />
+<button id="btn4">get attribute</button>
+<p>Link</p>
+<a href="https://www.w3schools.com" id="links1">Go w3shools</a>
+
+</body>
+<script>
+$(document).ready(()=>{
+    $('#btn1').click(()=>{
+        alert('Text: ' + $('#text1').text());
+    });
+
+    $('#btn2').click(()=>{
+        alert('HTML: ' + $('#text1').html());
+    });
+
+    $('#btn3').click(()=>{
+        alert('Name: ' + $('#input1').val());
+    });
+
+    $('#btn4').click(() => {
+        alert('Link: ' + $('#links1').attr('href'));
+    })
+});
+</script>
+</html>

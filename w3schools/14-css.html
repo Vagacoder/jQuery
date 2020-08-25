@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 jQuery CSS</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        .title{
+            color: red;
+            background: blue;
+        }
+
+        #p1{
+            font-size: 120%;
+        }
+
+        #p2{
+            border: 1px dotted black;
+        }
+    </style>
+</head>
+<body>
+<h1 class='title'>14 jQuery CSS</h1>
+<p id="p1">First p</p>
+<p id="p2">Second p</p>
+
+<button id="btn1">get CSS</button>
+<button id="btn2">set bg color</button>
+<button id="btn3">set color and bg color</button>
+
+</body>
+<script>
+$(document).ready(()=>{
+
+    $('#btn1').click(()=>{
+        let titleColor = $('.title').css('color');
+        alert(titleColor);
+    });
+
+    $('#btn2').click(()=>{
+        $('.title').css({'background':'lime'});
+    });
+
+    $('#btn3').click(()=>{
+        $('.title').css({
+            'background': 'yellow',
+            'color': 'gold',
+        });
+    });
+});
+
+</script>
+</html>

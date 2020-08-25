@@ -12,6 +12,7 @@
 </head>
 <body>
 <h1>10 jQuery Set Content</h1>
+<h4>directly set</h4>
 <button id="btn1">set text</button>
 <p id="text1">text1</p>
 
@@ -23,8 +24,22 @@
 <button id="btn3">set value</button>
 <input type="text" id="text3" value="text3"></input>
 
+<hr/>
+<h4>through callback</h4>
+<button id="btn4">set text</button>
+<p id="text4">text4</p>
 
+<button id="btn5">set html</button>
+<p id="text5">te<b>xt</b>5</p>
 </body>
+
+<hr/>
+<h4> set attributes</h4>
+<button id="btn6">Set href to w3school</button>
+<a id="link1" href="https://www.google.com">Go google</a>
+
+<button id="btn7">Set href to MSN us news></button>
+<a id="link2" href="https://www.msn.com">Go MSN</a>
 
 <script>
 $(document).ready(()=>{
@@ -39,6 +54,31 @@ $(document).ready(()=>{
     $('#btn3').click(()=>{
         $('#text3').val('Dolly duck');
     });
+
+    $('#btn4').click(()=>{
+        $('#text4').text((i, prevText)=>{
+            return 'Previous text is: ' + prevText + '; New text is Hello at ' + i;
+        });
+    });
+
+    $('#btn5').click(()=>{
+        $('#text5').html((i, prevHtml)=>{
+            return 'Previous html is: ' + prevHtml + '; New html is <b>Hello</b> at ' + i;
+        });
+    });
+
+    $('#btn6').click(()=>{
+        $('#link1').attr({
+            'href': 'https://www.w3schools.com',
+            'title': 'W3school tutorials'
+        });
+    });
+
+    $('#btn7').click(()=>{
+        $('#link2').attr('href',(i, prevLink)=>{
+            return prevLink + '/en-us/news/';
+        })
+    })
 });
 </script>
 </html>

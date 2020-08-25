@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 jQuery CSS class</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        .important{
+            font-size: 350%;
+        }
+
+        .blue{
+            color: dodgerblue;
+        }
+
+        .pinkgb{
+            background: hotpink;
+        }
+
+    </style>
+</head>
+<body>
+<h1>13 jQuery CSS Class</h1>
+<h2>Title</h2>
+<p>first paragraphy</p>
+<p>second paragraphy</p>
+
+<div>Note</div>
+
+<button id="btn1">add class</button>
+<button id="btn2">remove class</button>
+<button id="btn3">toggle class</button>
+
+</body>
+<script>
+$(document).ready(()=>{
+
+    $('#btn1').click(()=>{
+        $('h2, p').addClass('blue');
+        $('h2, div').addClass('important');
+    });
+
+    $('#btn2').click(()=>{
+        $('h2, p').removeClass('blue');
+        $('h2, div').removeClass('important');
+    });
+
+    $('#btn3').click(()=>{
+        $('h2, p, div').toggleClass('pinkgb');
+    })
+});
+
+
+</script>
+
+</html>

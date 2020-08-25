@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 jQuery Add Content</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        #here{
+            display: inline;
+        }
+
+    </style>
+</head>
+<body>
+<h1>11 jQuery Add Content</h1>
+<div id="append">
+
+    <p class="para">First paragraph</p>
+    <p class="para">Second paragraph</p>
+    
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    
+    <button id="btn1">Append text to p tag</button>
+    <button id="btn2">Append list item</button>
+<button id="btn3">Prepend text to p tag</button>
+<button id="btn4">Prepend list item</button>
+
+<button id="btn5">Append 3 paragraphs</button>
+
+</div>
+
+<hr/>
+<div>
+<h4 id='here'>HERE</h4>
+
+<br/>
+<button id="btn6">Preppend before here</button>
+<button id="btn7">Append after here</button>
+
+</div>
+
+
+</body>
+<script>
+$(document).ready(() =>{
+    $('#btn1').click(()=>{
+        $('.para').append(' <b>Additional text</b>');
+    })
+
+    $('#btn2').click(()=>{
+        $('ol').append('<li>Item4</li>');
+    })
+
+    $('#btn3').click(()=>{
+        $('.para').prepend('<b>Pre text </b>');
+    });
+
+    $('#btn4').click(()=>{
+        $('ol').prepend('<li>Item 0 </li>');
+    });
+
+    let txt1 = '<p>Text.</p>';
+    let txt2 = $("<p></p>").text('Text.');
+    let txt3 = document.createElement('p');
+    txt3.innerHTML = 'Text.';
+
+    $('#btn5').click(() =>{
+        $('#append').append(txt1, txt2, txt3);
+    });
+
+    $('#btn6').click(()=>{
+        $('#here').before('<b>Before </b>');
+    });
+
+    $('#btn7').click(()=>{
+        $('#here').after('<b> After</b>');
+    });
+});
+
+
+</script>
+
+</html>

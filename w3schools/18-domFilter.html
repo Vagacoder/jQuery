@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 jQuery dom traverse filter</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        div, p {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+<h1>18 jQuery dom traverse filter</h1>
+<p> starting </p>
+
+<div id="box1">
+    <p>para 1</p>
+    <p>para 2</p>
+</div>
+
+<div id="box2">
+    <p>para 1</p>
+    <p>para 2</p>
+</div>
+
+<div id="box3">
+    <p class='intro'>para 1</p>
+    <p>para 2</p>
+</div>
+
+<div id="box4">
+    <p>para 1</p>
+    <p class='intro'></pclass>para 2</p>
+</div>
+
+<p>ending</p>
+</body>
+<script>
+$(document).ready(() => {
+
+    $('p').first().css({'color': 'red'});
+
+    $('p').last().css({'color': 'red'});
+
+    $('div p').eq(1).css({'color': 'red'});
+
+    $('p').filter('.intro').css({'color': 'blue'});
+
+    $('#box3 p').not('.intro').css({'color':'lime'});
+
+});
+
+</script>
+</html>

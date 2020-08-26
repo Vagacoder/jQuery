@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17 jQuery dom traverse siblings</title>
+    <script src='./lib/jquery-3.5.1.dev.js' ></script>
+    <style>
+        div, p, span, h2, h3 {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>17 jQuery dom traverse siblings</h1>
+<div id="parent1">
+    div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="tag1">h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<div id="parent2">
+    div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="tag2">h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<div id="parent3">
+    div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="tag3">h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<div id="parent4">
+    div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="tag4">h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<div id="parent5">
+    div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2 id="tag5">h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+</body>
+<script>
+$(document).ready(()=>{
+    $('#tag1').siblings().css({'color': 'red'});
+
+    $('#tag2').siblings('p').css({'color': 'red'});
+
+    $('#tag3').next().css({'color': 'red'});
+
+    $('#tag4').nextAll().css({'color': 'red'});
+
+    $('#tag5').nextUntil('p').css({'color': 'red'});
+
+
+});
+
+</script>
+</html>

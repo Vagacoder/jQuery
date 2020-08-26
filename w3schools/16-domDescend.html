@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16 jQeury DOM traverse descend</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        div, p{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>16 jQuery DOM traverse descend</h1>
+<div id="parent1">
+    parent 1
+    <div>
+        child 1
+    </div>
+
+    <div>
+        child 2
+    </div>
+
+</div>
+
+<div id="parent2">
+    parent 2
+    <div>
+        child 3
+    </div>
+
+    <div>
+        child 4
+    </div>
+
+</div>
+
+<div id="parent3">
+    parent 3
+    <div>
+        child 5
+    </div>
+
+    <p>
+        child 6
+    </p>
+
+</div>
+
+</body>
+<script>
+$(document).ready(() =>{
+    $('#parent1').children().css({'color':'red'});
+
+    $('#parent2').children('div:first-child').css({'color': 'red'});
+
+    $('#parent3').find('p').css({'color': 'red'});
+});
+
+
+</script>
+</html>

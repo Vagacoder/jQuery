@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 jQuery DOM traversing ancestors</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        div {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+
+        p {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+        span{
+            display: block;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>15 jQuery DOM traversing ancestor</h1>
+    <div>
+        great-grandparent
+        <div>
+            grandparent
+            <p>
+                parent
+                <span id="box1">span </span>
+            </p>
+        </div>
+    </div>
+
+    <div>
+        great-grandparent
+        <div>
+            grandparent
+            <p>
+                parent
+                <span id="box2">span </span>
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(() => {
+
+        $('#box1').parent().css({ 'color': 'blue' });
+        
+        $('#box2').parentsUntil('body').css({ 'color': 'red' });
+
+
+    });
+
+
+</script>
+
+</html>

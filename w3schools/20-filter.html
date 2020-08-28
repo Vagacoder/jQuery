@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 jQuery filter</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid #aaa;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+<h1>20 jQuery Filter</h1>    
+<div>Type in input box to search in table</div>
+<input id="Input" type="text" placeholder="Search..." />
+<br/>
+
+<table>
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody id="table">
+        <tr>
+            <td>John</td>
+            <td>Dor</td>
+            <td>john@example.com</td>
+        </tr>   
+        <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@mail.com</td>
+        </tr>
+        <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@abc.com</td>
+        </tr>
+        <tr>
+            <td>Jack</td>
+            <td>Smith</td>
+            <td>js@cnn.com</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+<script>
+$(document).ready(()=>{
+
+    $('#Input').on('keyup', function(){
+        let value = $(this).val().toLowerCase();
+        console.log(value);
+        $('#table tr').filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+});
+
+</script>
+
+</html>

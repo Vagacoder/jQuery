@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19 jQuery AJAX load</title>
+    <script src='./lib/jquery-3.5.1.dev.js'></script>
+    <style>
+
+
+    </style>
+</head>
+<body>
+<h1>19 jQuery AJAX load</h1>
+<button id='btn1'>Click to load on div1</button>
+<div id="div1">This is first div</div>
+
+</body>
+<script>
+$(document).ready(()=>{
+    $('#btn1').click(()=>{
+        console.log('clicked!');
+        $('#div1').css({'color':'red'});
+        $('#div1').load('./demo_test.txt');
+    });
+
+});
+
+</script>
+</html>
